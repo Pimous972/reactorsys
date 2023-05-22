@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import './App.css';
 import { MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme';
 import Button from '../components/ui/Button/Button';
@@ -6,10 +6,19 @@ import Button from '../components/ui/Button/Button';
 function App() {
 
   const [counter, setcounter] = useState(0);
+  
+  useEffect(() => {
+    console.log('valeur étatique : ' + counter)
+    // return () => {
+      
+    // };
+  }, [counter]);
+
+
 
   return (
     <div className="App">
-      
+     
       <div> Compteur  : {counter}</div>
 
       <Button
@@ -17,7 +26,7 @@ function App() {
         title="-1"
         onButtonClick={(message)=>{
           setcounter(counter-1);
-          console.log(counter);
+          console.log('valeur dans fonction : ' + counter);
         }}
       />         
       
@@ -26,7 +35,7 @@ function App() {
         title="+1"
         onButtonClick={(message)=>{
           setcounter(counter+1);
-          console.log(counter);
+          console.log('valeur dans fonction : ' + counter);
         }}
       />
        
