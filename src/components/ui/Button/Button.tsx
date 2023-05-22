@@ -7,6 +7,7 @@ interface I_ButtonProps{
     children : string|React.ReactNode|Array<React.ReactNode|string>,
     bgColor?:string,
     type?:'button'|'submit'|'reset'
+    title?:string;
 
     
 }
@@ -22,6 +23,7 @@ const Button:React.FC<I_ButtonProps> = (props) => {
             className={style.Button}
         >
                 {props.children}
+                {props.title}
                 
         </button>
     );
