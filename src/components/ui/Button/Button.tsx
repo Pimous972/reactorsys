@@ -1,8 +1,17 @@
 import React from 'react';
 import style from './Button.module.css';
 import PropTypes from 'prop-types';
+interface I_ButtonProps{
+    onButtonClick : Function ,
+    style?: object ,
+    children : string|React.ReactNode|Array<React.ReactNode|string>,
+    bgColor?:string,
+    type:'button'|'submit'|'reset'
 
-const Button = (props) => {
+    
+}
+
+const Button:React.FC<I_ButtonProps> = (props) => {
    
     return (
         <button 
@@ -13,6 +22,7 @@ const Button = (props) => {
             className={style.Button}
         >
                 {props.children}
+                
         </button>
     );
 }
@@ -20,13 +30,14 @@ const Button = (props) => {
 Button.propTypes={
     children : PropTypes.any.isRequired,
     onButtonClick : PropTypes.func.isRequired,
-    bgColor:PropTypes.string,
-    style:PropTypes.object,
-    type:PropTypes.oneOf(['reset','button','submit']).isRequired
+    bgColor : PropTypes.string,
+    style : PropTypes.object,
+    
 }
 
 Button.defaultProps ={
     bgColor:'lime',
+    type:'button'
     
 }
 
