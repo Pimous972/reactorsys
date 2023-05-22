@@ -6,7 +6,7 @@ interface I_ButtonProps{
     style?: object ,
     children : string|React.ReactNode|Array<React.ReactNode|string>,
     bgColor?:string,
-    type:'button'|'submit'|'reset'
+    type?:'button'|'submit'|'reset'
 
     
 }
@@ -32,7 +32,7 @@ Button.propTypes={
     onButtonClick : PropTypes.func.isRequired,
     bgColor : PropTypes.string,
     style : PropTypes.object,
-    
+    type : PropTypes.oneOf(['button','submit','reset'])
 }
 
 Button.defaultProps ={
