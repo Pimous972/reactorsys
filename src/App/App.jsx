@@ -6,8 +6,13 @@ import Button from '../components/ui/Button/Button';
 function App() {
   return (
     <div className="App">
+      <Button 
+        title="Prendre en compte"
+        onButtonClick={(message)=>{
+          console.log(message);
+        }}
       
-      <Button title="Coucou"></Button>
+      ></Button>
     </div>
   );
 }

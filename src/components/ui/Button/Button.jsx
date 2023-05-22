@@ -5,7 +5,13 @@ const Button = (props) => {
    
     
     return (
-        <button className={style.Button}>{props.title}</button>
+        <button 
+            onClick={(evt)=>{
+                props.onButtonClick('coucou');
+            }}  
+            className={style.Button}>
+                {props.title}
+        </button>
     );
 }
 
