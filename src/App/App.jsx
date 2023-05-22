@@ -7,12 +7,15 @@ function App() {
   return (
     <div className="App">
       <Button 
+        type="button"
         title="Prendre en compte"
         onButtonClick={(message)=>{
           console.log(message);
         }}
       
-      ></Button>
+      >
+        Prendre en compte        
+      </Button>
     </div>
   );
 }
