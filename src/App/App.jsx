@@ -18,7 +18,11 @@ import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
+  // Gestion des memes
   const [meme, setMeme] = useState(emptyMeme)
+  
+  // Gestion des images
+  const [imgs, setimgs] = useState([])
 
 
   return (
@@ -26,8 +30,8 @@ function App() {
       <Header />
       <Navbar />
       <FlexW1Grow >
-        <MemeSVGViewer meme={meme} image={undefined} />
-        <MemeForm meme={meme} onMemeChange={(meme) => {
+        <MemeSVGViewer meme={meme} image={imgs.find((img)=>img.id===meme.imageId)} />
+        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
           setMeme(meme);
         }} />
       </FlexW1Grow>
