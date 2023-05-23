@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './Button.module.css';
 import PropTypes from 'prop-types';
 
-
-
 interface I_ButtonProps{
     onButtonClick: Function
     style?:object
