@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import './App.css';
 import { MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme';
-import Button from '../components/ui/Button/Button';
+import Button from './components/ui/Button/Button';
 
 function App() {
 
