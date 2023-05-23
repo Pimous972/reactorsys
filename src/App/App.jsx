@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import Header from './components/ui/Header/Header';
@@ -9,16 +9,27 @@ import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 function App() {
+
+  const [meme, setMeme] = useState(emptyMeme)
+
 
   return (
     <FlexH3Grow>
       <Header />
       <Navbar />
       <FlexW1Grow >
-        <MemeSVGViewer meme={emptyMeme} image={undefined} />
-        <MemeForm />
+        <MemeSVGViewer meme={meme} image={undefined} />
+        <MemeForm meme={meme} onMemeChange={(meme) => {
+          setMeme(meme);
+        }} />
       </FlexW1Grow>
       <Footer/>
     </FlexH3Grow>
