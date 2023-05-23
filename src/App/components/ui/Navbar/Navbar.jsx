@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Navbar.module.css';
+import {Navbar as NavBar , Container, Nav} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const initialState ={};
 
 
 const Navbar = (props) => { 
   
-  const [state, setstate] = useState(initialState)
-
-  useEffect(() => {
-    return () => {
-      console.log('Navbar mounted')
-    };
-  }, [])
-
   return (
   
     <div className={styles.Navbar} data-testid="Navbar">
-      Navbar Component
+       <NavBar bg="primary" variant="dark">
+        <Container>
+          <NavBar.Brand href="#home">Navbar</NavBar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Create</Nav.Link>
+            <Nav.Link href="#features">Thumbnail</Nav.Link>            
+          </Nav>
+        </Container>
+      </NavBar>
     </div>
   )
 };
