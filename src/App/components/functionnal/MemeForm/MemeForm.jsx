@@ -31,8 +31,13 @@ const MemeForm = (props) => {
         <hr />
         <label htmlFor="image"><h2>Image</h2></label>
         <br />
-        <Form.Select name="image" id="image">
+        <Form.Select name="image" id="image" value={props.meme.imageId} onChange={evt=>{
+          props.onMemeChange({...props.meme, imageId:Number(evt.target.value)})
+        }}>
           <option value="-1">No image</option>
+          {
+            props.images.map((img,i)=> <option key={`select-img-${i}`} value={img.id}>{img.titre}</option>)
+          }
         </Form.Select>
         <hr />
         <label htmlFor="text"><h2>texte</h2></label>
@@ -50,7 +55,7 @@ const MemeForm = (props) => {
           })
         }}/>
         <label htmlFor="y"><h2 style={{display:'inline'}}>y :</h2></label>
-        <input className={styles.smallNumber} name="y" id="y" type="number" value={props.meme.y}  onChange={evt=>{
+        <Form.Control className={styles.smallNumber} name="y" id="y" type="number" value={props.meme.y}  onChange={evt=>{
           props.onMemeChange({...props.meme,y:Number(evt.target.value)
           })
         }}/>
@@ -58,21 +63,21 @@ const MemeForm = (props) => {
         <br />
         <h2>Decorations</h2>
         <label htmlFor="color"><h2 style={{display:'inline'}}>color :</h2></label>
-        <input name="color" id="color" type="color" value={props.meme.color}  onChange={evt=>{
+        <Form.Control name="color" id="color" type="color" value={props.meme.color}  onChange={evt=>{
           props.onMemeChange({...props.meme,color:evt.target.value
           })
         }}/>
         <br />
         <label htmlFor="fontSize"><h2 style={{display:'inline'}}>font-size :</h2></label>
-        <input className={styles.smallNumber} name="fontSize" id="fontSize" type="number" min="0"  value={props.meme.fontSize} 
+        <Form.Control className={styles.smallNumber} name="fontSize" id="fontSize" type="number" min="0"  value={props.meme.fontSize} 
         onChange={evt=>{
-          props.onMemeChange({...props.meme,y:Number(evt.target.value)
+          props.onMemeChange({...props.meme,fontSize:Number(evt.target.value)
           })
         }}
         />px
         <br />
         <label htmlFor="fontWeight"><h2 style={{display:'inline'}}>font-weight :</h2></label>
-        <input className={styles.smallNumber} name="fontWeight" id="fontWeight" type="number" min="100" step="100" max="900" value={props.meme.fontWeight} onChange={evt=>{
+        <Form.Control className={styles.smallNumber} name="fontWeight" id="fontWeight" type="number" min="100" step="100" max="900" value={props.meme.fontWeight} onChange={evt=>{
           props.onMemeChange({...props.meme,fontWeight:evt.target.value
           })
         }}/>
