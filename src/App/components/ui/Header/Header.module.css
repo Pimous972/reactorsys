@@ -1,1 +1,15 @@
-.Header {}
+.Header {
+    font-weight: 500;
+    font-size: 32px;
+    font-style: oblique;
+    text-shadow: 5px 5px 5px 5px rgb(7, 7, 6);
+}
+
+.meme {
+    color:chocolate;
+}
+
+.js
+{
+    color:black
+}

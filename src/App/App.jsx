@@ -1,46 +1,27 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import { MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme';
-import Button from './components/ui/Button/Button';
+
+import Header from './components/ui/Header/Header';
+import Navbar from './components/ui/Navbar/Navbar';
+import Footer from './components/ui/Footer/Footer';
+import FlexH3Grow from './components/layout/FlexH3Grow/FlexH3Grow.lazy';
+import FlexW1Grow from './components/layout/FlexW1Grow/FlexW1Grow';
+import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme';
+
 
 function App() {
 
-  const [counter, setcounter] = useState(0);
-  
-  useEffect(() => {
-    console.log('valeur étatique : ' + counter)
-    // return () => {
-      
-    // };
-  }, [counter]);
-
-
-
   return (
-    <div className="App">
-     
-      <div> Compteur  : {counter}</div>
-
-      <Button
-        type='button'
-        title="-1"
-        onButtonClick={(message)=>{
-          setcounter(counter-1);
-          console.log('valeur dans fonction : ' + counter);
-        }}
-      />         
-      
-      <Button        
-        type='button'
-        title="+1"
-        onButtonClick={(message)=>{
-          setcounter(counter+1);
-          console.log('valeur dans fonction : ' + counter);
-        }}
-      />
-       
-      
-    </div>
+    <FlexH3Grow>
+      <Header />
+      <Navbar />
+      <FlexW1Grow >
+        <MemeSVGViewer meme={emptyMeme} image={undefined} />
+        <MemeForm />
+      </FlexW1Grow>
+      <Footer/>
+    </FlexH3Grow>
   );
 }
 

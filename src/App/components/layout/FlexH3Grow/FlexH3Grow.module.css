@@ -1,3 +1,10 @@
 .FlexH3Grow {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+}
 
+.FlexH3Grow>*:nth-child(3){
+    flex-grow : 1;
 }

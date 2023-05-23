@@ -6,19 +6,12 @@ const initialState ={};
 
 
 const Header = (props) => { 
-  
-  const [state, setstate] = useState(initialState)
-
-  useEffect(() => {
-    return () => {
-      console.log('Header mounted')
-    };
-  }, [])
 
   return (
   
     <div className={styles.Header} data-testid="Header">
-      Header Component
+      <span className={styles.meme}>Meme</span>.
+      <span className={styles.js}>JS</span>
     </div>
   )
 };
