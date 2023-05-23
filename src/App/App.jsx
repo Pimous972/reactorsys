@@ -12,6 +12,7 @@ import { MemeSVGThumbnail, MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Route, Routes } from 'react-router-dom';
 
 
 
@@ -50,12 +51,20 @@ function App() {
     <FlexH3Grow>
       <Header />
       <Navbar />
-      {/* <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/> */}
+      
       <FlexW1Grow >
-        <MemeSVGViewer meme={meme} image={imgs.find((img)=>img.id===meme.imageId)} basePath='' />
-        <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
-          setMeme(meme);
-        }} />
+        <Routes>
+          <Route path='/create' element={
+              <>
+                <MemeSVGViewer meme={meme} image={imgs.find((img)=>img.id===meme.imageId)} basePath='' />
+                <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
+                  setMeme(meme);
+                }} />
+              </>
+            } 
+          />
+          <Route path='/thumbnail' element={ <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/> } />
+        </Routes>        
       </FlexW1Grow>
       <Footer/>
     </FlexH3Grow>
