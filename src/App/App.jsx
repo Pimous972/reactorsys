@@ -13,8 +13,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Route, Routes } from 'react-router-dom';
-
-
+import { store } from "./store/store";
+import MemeThumbnail from './pages/MemeThumbnail/MemeThumbnail';
+import MemeEditor from './pages/MemeEditor/MemeEditor';
 
 
 function App() {
@@ -22,31 +23,6 @@ function App() {
   // Gestion des memes
   const [meme, setMeme] = useState(emptyMeme)
   
-  // Gestion des images
-  const [imgs, setimgs] = useState([])
-
-  // Gestion des memes
-  const [memes, setmemes] = useState([])
-
-
-  useEffect(() => {
-    
-    const promiseImg = fetch(`http://localhost:5689/images`)
-    .then(response=>response.json());
-    
-    const promiseMeme = fetch(`http://localhost:5689/memes`)
-    .then(response=>response.json());
-
-    Promise.all([promiseImg,promiseMeme])
-    .then(
-      array => {
-        setimgs(array[0]);
-        setmemes(array[1]);
-      }
-    );
-
-  }, [])
-
   return (
     <FlexH3Grow>
       <Header />
@@ -54,7 +30,7 @@ function App() {
       
       <FlexW1Grow >
         <Routes>
-          <Route path='/create' element={
+          {/* <Route path='/create' element={
               <>
                 <MemeSVGViewer meme={meme} image={imgs.find((img)=>img.id===meme.imageId)} basePath='' />
                 <MemeForm meme={meme} images={imgs} onMemeChange={(meme) => {
@@ -62,8 +38,10 @@ function App() {
                 }} />
               </>
             } 
-          />
-          <Route path='/thumbnail' element={ <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/> } />          
+          /> */}
+          <Route path='/create' element={<MemeEditor /> } />
+          <Route path='/thumbnail' element={ <MemeThumbnail /> } />
+
         </Routes>        
       </FlexW1Grow>
       <Footer/>

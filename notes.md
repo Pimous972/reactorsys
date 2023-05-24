@@ -118,11 +118,13 @@ Afin de rendre les champs modifiables il est nécéssaire d'utiliser l'attibut d
 # Redux
 Integration simplifier des gestionnaires d'état
 
+voir la video de grafikart.
 * permet de connecter des composants
 
 
-
-
+# shortcut
+rfcp créer un snippet pour créer un composant
+rxlsice créer une tranche redux () 
 
 
 
