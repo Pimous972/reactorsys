@@ -130,10 +130,11 @@ rxlsice créer une tranche redux ()
 
 # Biblio
 
-https://npmtrends.com
-https://www.w3schools.com/colors/colors_names.asp
-https://react-proto.github.io/react-proto/
-https://www.npmjs.com/package/generate-react-cli
-https://flukeout.github.io/ exercice CSS
-https://learngitbranching.js.org/?locale=fr_FR
-create-react-app création des fichiers d'environnementchor
+* Depot git Alexandre : https://github.com/champix56/tjs-2023-05-22 
+* https://npmtrends.com
+* https://www.w3schools.com/colors/colors_names.asp
+* https://react-proto.github.io/react-proto/
+* https://www.npmjs.com/package/generate-react-cli
+* https://flukeout.github.io/ exercice CSS
+* https://learngitbranching.js.org/?locale=fr_FR
+* create-react-app création des fichiers d'environnementchor

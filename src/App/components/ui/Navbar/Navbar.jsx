@@ -21,8 +21,8 @@ const Navbar = (props) => {
                         <LinkContainer to="/thumbnail">
                             <Nav.Link href="#features">Thumbnail</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/meme/1">
-                            <Nav.Link href="#features">Meme</Nav.Link>
+                        <LinkContainer to="/pdf">
+                            <Nav.Link href="#pdf">Pdf</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Container>

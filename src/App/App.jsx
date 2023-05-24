@@ -41,6 +41,7 @@ function App() {
           /> */}
           <Route path='/create' element={<MemeEditor /> } />
           <Route path='/thumbnail' element={ <MemeThumbnail /> } />
+          
 
         </Routes>        
       </FlexW1Grow>
