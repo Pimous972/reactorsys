@@ -115,6 +115,14 @@ Afin de rendre les champs modifiables il est nécéssaire d'utiliser l'attibut d
 <input name="titre" id="titre" value={props.meme.titre}/>
 ```
 
+# Redux
+Integration simplifier des gestionnaires d'état
+
+* permet de connecter des composants
+
+
+
+
 
 
 
