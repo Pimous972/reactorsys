@@ -63,7 +63,7 @@ function App() {
               </>
             } 
           />
-          <Route path='/thumbnail' element={ <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/> } />
+          <Route path='/thumbnail' element={ <MemeSVGThumbnail memes={memes} images={imgs} basePath=''/> } />          
         </Routes>        
       </FlexW1Grow>
       <Footer/>
